@@ -33,8 +33,7 @@ class BotController < ApplicationController
   end
 
   def handle_search_text
-    @sicks = []
     return unless params[:text]
-    @sicks.push Sickness.search(params[:text])
+    @sicks = Sickness.search(params[:text])
   end
 end

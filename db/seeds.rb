@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+yml_file = File.join(Rails.root, 'db/fixtures', 'sicknesses.yml')
+sicknesses = YAML.load_file(yml_file).map do |sickness|
+  Sickness.create(sickness)
+end
